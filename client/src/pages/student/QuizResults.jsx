@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
-import axios from "axios"
+import { quizAPI, attemptAPI } from "../../api"
 import Navbar from "../../components/Navbar"
 import "../../styles/QuizResults.css"
 
@@ -19,15 +19,15 @@ const QuizResults = () => {
     const fetchResults = async () => {
       try {
         // Fetch attempt details
-        const attemptResponse = await axios.get(`/api/attempts/${attemptId}`)
+        const attemptResponse = await attemptAPI.getAttempt(attemptId)
         setAttempt(attemptResponse.data)
 
         // Fetch quiz details
-        const quizResponse = await axios.get(`/api/quizzes/${quizId}`)
+        const quizResponse = await quizAPI.getQuiz(quizId)
         setQuiz(quizResponse.data)
 
         // Fetch questions with answers
-        const questionsResponse = await axios.get(`/api/attempts/${attemptId}/questions`)
+        const questionsResponse = await attemptAPI.getAttemptQuestions(attemptId)
         setQuestions(questionsResponse.data)
       } catch (err) {
         setError("Failed to load quiz results")

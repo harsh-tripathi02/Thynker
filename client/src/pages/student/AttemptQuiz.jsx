@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { useParams, useNavigate } from "react-router-dom"
-import axios from "axios"
-import { quizAPI } from "../../api"
+import { quizAPI, attemptAPI } from "../../api"
 import "../../styles/AttemptQuiz.css"
 
 const AttemptQuiz = () => {
@@ -138,13 +137,13 @@ const AttemptQuiz = () => {
     setQuizCompleted(true)
 
     try {
-      const response = await axios.post("/api/attempts", {
+      const response = await attemptAPI.createAttempt({
         quizId,
         answers: Object.entries(answers).map(([questionId, answer]) => ({
           questionId,
-          selectedOption: answer !== null ? answer : -1, // -1 for unanswered
+          selectedOption: answer !== null ? answer : -1,
         })),
-        timeTaken: quiz.timeLimit * 60 - timeLeft, // Time taken in seconds
+        timeTaken: quiz.timeLimit * 60 - timeLeft,
       })
 
       navigate(`/student/quiz/${quizId}/results/${response.data._id}`)

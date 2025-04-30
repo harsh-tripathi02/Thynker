@@ -49,6 +49,7 @@ const quizAPI = {
   updateQuiz: (quizId, quizData) => API.put(`/api/quizzes/${quizId}`, quizData),
   deleteQuiz: (quizId) => API.delete(`/api/quizzes/${quizId}`),
   getQuizQuestions: (quizId) => API.get(`/api/quizzes/${quizId}/questions`),
+  getQuizWithQuestions: (quizId) => API.get(`/api/quizzes/${quizId}/with-questions`), // <-- Added this line
 }
 
 // Question API
