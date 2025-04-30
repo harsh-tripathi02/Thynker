@@ -1,0 +1,328 @@
+.results-page-container {
+    min-height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .results-container {
+    flex: 1;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  .results-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .results-header h1 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+  }
+  
+  .results-header h2 {
+    color: var(--text-light);
+    font-size: 1.2rem;
+  }
+  
+  .results-summary {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .score-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .score-circle.excellent {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+  }
+  
+  .score-circle.good {
+    background: linear-gradient(135deg, #ff9800, #ef6c00);
+  }
+  
+  .score-circle.needs-improvement {
+    background: linear-gradient(135deg, #f44336, #c62828);
+  }
+  
+  .score-percentage {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .score-text {
+    font-size: 1rem;
+  }
+  
+  .score-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .detail-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .detail-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    min-width: 100px;
+  }
+  
+  .detail-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .detail-value.passing {
+    color: var(--success-color);
+  }
+  
+  .detail-value.failing {
+    color: var(--danger-color);
+  }
+  
+  .questions-review {
+    margin-bottom: 30px;
+  }
+  
+  .questions-review h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+  }
+  
+  .review-question {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .review-question.correct {
+    border-left: 5px solid var(--success-color);
+  }
+  
+  .review-question.incorrect {
+    border-left: 5px solid var(--danger-color);
+  }
+  
+  .review-question-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .review-question-header h4 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-right: 10px;
+  }
+  
+  .question-marks {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-right: 15px;
+  }
+  
+  .question-result {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  
+  .question-result.correct {
+    background-color: #e8f5e9;
+    color: var(--success-color);
+  }
+  
+  .question-result.incorrect {
+    background-color: #ffebee;
+    color: var(--danger-color);
+  }
+  
+  .review-question-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+  
+  .review-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .review-option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #f9f9f9;
+  }
+  
+  .review-option.correct-option {
+    background-color: #e8f5e9;
+    border-color: var(--success-color);
+  }
+  
+  .review-option.user-selected:not(.correct-option) {
+    background-color: #ffebee;
+    border-color: var(--danger-color);
+  }
+  
+  .option-marker {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-light);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  
+  .option-text {
+    flex: 1;
+  }
+  
+  .option-badge {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    margin-left: 10px;
+  }
+  
+  .option-badge.correct {
+    background-color: var(--success-color);
+    color: white;
+  }
+  
+  .option-badge.incorrect {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  .results-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .action-button {
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .action-button.primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .action-button.primary:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .action-button.secondary {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+  }
+  
+  .action-button.secondary:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .error-container h2 {
+    font-size: 2rem;
+    color: var(--danger-color);
+    margin-bottom: 15px;
+  }
+  
+  .error-container p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+  }
+  
+  .back-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .back-button:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  @media (max-width: 768px) {
+    .score-card {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .results-actions {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,74 @@
+/* Base styles */
+:root {
+    --primary-color: #6a5acd;
+    --primary-light: #8677d9;
+    --primary-dark: #5a4abf;
+    --secondary-color: #ff7f50;
+    --secondary-light: #ff9e7a;
+    --secondary-dark: #e56a3d;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --text-color: #333333;
+    --text-light: #666666;
+    --background-color: #f9f9f9;
+    --card-color: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  .app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Loading spinner */
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--border-color);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Error message */
+  .error-message {
+    background-color: #ffebee;
+    color: var(--danger-color);
+    padding: 12px;
+    border-radius: 4px;
+    margin: 16px 0;
+    text-align: center;
+  }
+  
