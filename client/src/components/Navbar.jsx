@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <span className="logo-text">QuizMaster</span>
+          <span className="logo-text">Thynker</span>
         </Link>
 
         <div className="navbar-toggle" onClick={toggleMenu}>
